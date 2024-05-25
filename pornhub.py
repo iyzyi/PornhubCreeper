@@ -19,7 +19,7 @@ class PornhubDownloader:
         start_time = time.perf_counter()
         success = False
 
-        video_id = re.search(r'viewkey=([0-9A-Za-f]+)', view_url)
+        video_id = re.search(r'viewkey=((ph)?[0-9A-Za-f]+)', view_url)
         if video_id:
             video_id = video_id.group(1)
             if self.already_downloaded(video_id):
@@ -181,6 +181,8 @@ class PornhubDownloader:
 
     
     def already_downloaded(self, video_id):
+        if not os.path.exists('SAVED.txt'):
+            return False
         with open(r'SAVED.txt')as f:
             ids = f.read()
         return video_id in ids.split('\n')
