@@ -4,6 +4,8 @@ Pornhub爬虫🥰
 
 从私有库里拉出来开源啦~
 
+推荐搭配[iyzyi/VideoViewer: Pornhub Xvideos 本地视频浏览](https://github.com/iyzyi/VideoViewer)使用。
+
 ## 使用
 
 1. 安装ffmpeg
